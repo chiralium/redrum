@@ -15,9 +15,9 @@ def deploy():
   request_data = request.get_json()
   if request_data is not None:
     if request_data.get('repository'):
-      checkout = subprocess.Popen( 'git checkout .', stdout=subprocess.PIPE ).stdout
-      fetch = subprocess.Popen( 'git fetch', stdout=subprocess.PIPE ).stdout
-      pull = subprocess.Popen( 'git pull', stdout=subprocess.PIPE ).stdout
+      checkout = subprocess.Popen( 'git checkout .', stdout=subprocess.PIPE, shell=True ).stdout
+      fetch = subprocess.Popen( 'git fetch', stdout=subprocess.PIPE, shell=True ).stdout
+      pull = subprocess.Popen( 'git pull', stdout=subprocess.PIPE, shell=True ).stdout
 
       response = {
         'checkout' : checkout.read(),

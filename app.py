@@ -7,7 +7,7 @@ print( config.HOST )
 
 @app.route( '/' )
 def index():
-  return "Hello, Redrum!"
+  return "<b>Hello, Redrum!</b>"
 
 @app.route( '/deploy', methods=[ 'POST', 'GET' ] )
 def deploy():

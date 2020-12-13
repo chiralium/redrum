@@ -20,9 +20,9 @@ def deploy():
       pull = subprocess.Popen( 'git pull', stdout=subprocess.PIPE, shell=True ).stdout
 
       response = {
-        'checkout' : checkout.read(),
-        'fetch' : fetch.read(),
-        'pull' : pull.read()
+        'checkout' : str( checkout.read() ),
+        'fetch' : str( fetch.read() ),
+        'pull' : str( pull.read() )
       }
 
       resp = jsonify( response )

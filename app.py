@@ -8,7 +8,7 @@ print( config.HOST )
 
 @app.route( '/' )
 def index():
-  return "<p align='center' style='color: magenta; font-size: 24pt'><b>Hello, Redrum!</b></span>"
+  return "<p align='center' style='color: red; font-size: 24pt'><b>Hello, Redrum!!!</b></span>"
 
 @app.route( '/deploy', methods=[ 'POST', 'GET' ] )
 def deploy():
@@ -16,7 +16,6 @@ def deploy():
   if request_data is not None:
     if request_data.get('repository'):
       response = {
-        'checkout' : os.popen('git checkout .').read(),
         'fetch' : os.popen('git fetch').read(),
         'pull' : os.popen('git pull').read()
       }

@@ -2,3 +2,6 @@ venv/*
 venv
 
 .localhost
+
+__pycache__/*
+__pycache__/

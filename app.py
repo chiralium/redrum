@@ -24,7 +24,8 @@ def deploy():
       response = {
         'checkout' : os.system('cd /var/www/app/; git checkout .'),
         'fetch' : os.system('cd /var/www/app/; git fetch'),
-        'pull' : os.system('cd /var/www/app/; git pull')
+        'pull' : os.system('cd /var/www/app/; git pull'),
+        'build' : os.system('cd /var/www/app/; npm run-script build')
       }
 
       resp = jsonify( response )

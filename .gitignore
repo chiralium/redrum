@@ -6,3 +6,4 @@ venv
 __pycache__/*
 __pycache__/
 vue/client/node_modules/*
+redrum-start.sh

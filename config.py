@@ -8,7 +8,7 @@ def setup():
 
     # checking the environment is prod. or local machine
     is_localhost = True
-    try: open( DIR + '/app.py' );
+    try: open( DIR + '/.localhost' );
     except IOError: is_localhost = False
 
     print (is_localhost)

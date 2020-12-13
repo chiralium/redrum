@@ -13,7 +13,7 @@ def index():
 def deploy():
   request_data = request.get_json()
   if request_data is not None:
-    if request_data.get('hook').get('config') and request_data.get('repository'):
+    if request_data.get('repository'):
       response = {
         'fetch' : os.popen('git fetch').read(),
         'pull' : os.popen('git pull').read()

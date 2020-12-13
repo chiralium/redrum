@@ -1,9 +1,9 @@
 from flask import Flask, request, jsonify
-import os
 
 import config
 
 app = Flask(__name__)
+print( config.HOST )
 
 @app.route( '/' )
 def index():

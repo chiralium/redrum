@@ -16,8 +16,8 @@ def deploy():
   if request_data is not None:
     if request_data.get('repository'):
       response = {
-        'fetch' : os.popen('git fetch').read(),
-        'pull' : os.popen('git pull').read()
+        'fetch' : os.system('git fetch'),
+        'pull' : os.system('git pull')
       }
 
       resp = jsonify( response )

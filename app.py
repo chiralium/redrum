@@ -16,9 +16,9 @@ def deploy():
   if request_data is not None:
     if request_data.get('repository'):
       response = {
-        'checkout' : os.system('git checkout .'),
-        'fetch' : os.system('git fetch'),
-        'pull' : os.system('git pull')
+        'checkout' : os.system('cd /var/www/app/; git checkout .'),
+        'fetch' : os.system('cd /var/www/app/; git fetch'),
+        'pull' : os.system('cd /var/www/app/; git pull')
       }
 
       resp = jsonify( response )

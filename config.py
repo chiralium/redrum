@@ -11,7 +11,6 @@ def setup():
     try: open( DIR + '/.localhost' );
     except IOError: is_localhost = False
 
-    print (is_localhost)
     if is_localhost: HOST = "localhost"
 
 

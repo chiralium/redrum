@@ -1,14 +1,15 @@
 from flask import Flask, request, jsonify
-import os
+import os, requests
 
 import config
 
 app = Flask(__name__)
-print( config.HOST )
 
 @app.route( '/' )
 def index():
-  return "<p align='center' style='color: blue; font-size: 32pt'><b>Hello, Redrum =(</b></span>"
+  response = jsonify( {"message" : "Hello!" } )
+  response.headers['Content-Type'] = 'application/json';
+  return response
 
 @app.route( '/deploy', methods=[ 'POST', 'GET' ] )
 def deploy():
@@ -26,5 +27,17 @@ def deploy():
 
       return resp
   return "Undefined request!"
+
+@app.route( '/api/pegas/', methods=[ 'GET' ])
+def pegas_status():
+  pegas_response = requests.get('https://pegas.bsu.edu.ru', verify=False)
+  response = jsonify(
+    {
+      'status' : pegas_response.status_code
+    }
+  )
+
+  response.headers['Content-Type'] = 'application/json'
+  return response
 
 app.run(debug=True, host=config.HOST)

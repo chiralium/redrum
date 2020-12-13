@@ -2,7 +2,7 @@
   <div class="status_bar">
     <div v-bind:style="{ backgroundColor : this.status_code === 200 ? 'green' : 'red' }"></div>
     <h1 v-if="status_code === 200">Все хорошо!</h1>
-    <h1 v-else>Пезнулся...</h1>
+    <h1 v-else>Упалю..</h1>
   </div>
 </template>
 

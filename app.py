@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
 import os
 
+import config
+
 app = Flask(__name__)
 
 @app.route( '/' )
@@ -23,4 +25,4 @@ def deploy():
       return resp
   return "Undefined request!"
 
-app.run(debug=True, host='45.156.26.185')
+app.run(debug=True, host=config.HOST)

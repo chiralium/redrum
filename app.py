@@ -8,7 +8,7 @@ print( config.HOST )
 
 @app.route( '/' )
 def index():
-  return "<p align='center' style='color: red; font-size: 24pt'><b>Hello, Redrum...</b></span>"
+  return "<p align='center' style='color: gainsboro; font-size: 24pt'><b>Hello, Redrum...</b></span>"
 
 @app.route( '/deploy', methods=[ 'POST', 'GET' ] )
 def deploy():

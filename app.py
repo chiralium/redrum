@@ -15,7 +15,7 @@ def deploy():
   if request_data is not None:
     if request_data.get('repository'):
       response = {
-        'checkout' : op.popen('git checkout .').read(),
+        'checkout' : os.popen('git checkout .').read(),
         'fetch' : os.popen('git fetch').read(),
         'pull' : os.popen('git pull').read()
       }

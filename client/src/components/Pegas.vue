@@ -13,7 +13,7 @@
       return {
         status_code : 400,
         baseUrl :
-          process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'http://45.156.26.185:9000',
+          process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'http://45.156.26.185:5000',
       }
     },
 

@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-import os
+import subprocess
 
 import config
 
@@ -15,9 +15,14 @@ def deploy():
   request_data = request.get_json()
   if request_data is not None:
     if request_data.get('repository'):
+      checkout = subprocess.Popen( 'git checkout .', stdout=subprocess.PIPE ).stdout
+      fetch = subprocess.Popen( 'git fetch', stdout=subprocess.PIPE ).stdout
+      pull = subprocess.Popen( 'git pull', stdout=subprocess.PIPE ).stdout
+
       response = {
-        'fetch' : os.system('git fetch'),
-        'pull' : os.system('git pull')
+        'checkout' : checkout.read(),
+        'fetch' : fetch.read(),
+        'pull' : pull.read()
       }
 
       resp = jsonify( response )
